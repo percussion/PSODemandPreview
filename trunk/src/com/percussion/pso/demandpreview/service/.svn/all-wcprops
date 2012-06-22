@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/psolib/!svn/ver/4526/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service
+END
+DemandPublisherService.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/psolib/!svn/ver/4518/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/DemandPublisherService.java
+END
+ItemTemplateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/psolib/!svn/ver/4518/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/ItemTemplateService.java
+END
+SiteEditionLookUpService.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/psolib/!svn/ver/4515/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/SiteEditionLookUpService.java
+END
+SiteEditionHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/psolib/!svn/ver/4518/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/SiteEditionHolder.java
+END
+LinkBuilderService.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/psolib/!svn/ver/4518/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/LinkBuilderService.java
+END
+PreviewServiceLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/psolib/!svn/ver/4515/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/PreviewServiceLocator.java
+END
+SiteEditionConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/psolib/!svn/ver/4515/PSODemandPreview/trunk/src/com/percussion/pso/demandpreview/service/SiteEditionConfig.java
+END

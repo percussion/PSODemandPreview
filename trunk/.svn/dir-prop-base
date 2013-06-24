@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 63
-ivylib
-ivy-local.properties
-apidoc
-pso-demand-preview-test.zip
-
-END

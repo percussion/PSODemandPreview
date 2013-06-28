@@ -25,6 +25,7 @@ import com.percussion.services.assembly.IPSAssemblyTemplate;
 import com.percussion.services.assembly.PSAssemblyException;
 import com.percussion.services.guidmgr.IPSGuidManager;
 import com.percussion.services.publisher.IPSEdition;
+import com.percussion.services.sitemgr.IPSPublishingContext;
 import com.percussion.services.sitemgr.IPSSite;
 import com.percussion.utils.guid.IPSGuid;
 
@@ -63,17 +64,21 @@ public class DemandPreviewControllerTest {
 		final String contentId = "1";
 		final String folderId = "2"; 
 		final String siteId = "3"; 
-		final int pubContext = 301;
+		final int pubContextId = 301;
 		final PSLocator loc = new PSLocator(1,1); 
 		final IPSGuid contentGUID = context.mock(IPSGuid.class); 
 		final IPSGuid folderGUID = context.mock(IPSGuid.class);
 		final IPSSite site = context.mock(IPSSite.class);
 		final IPSEdition edition = context.mock(IPSEdition.class); 
+		final IPSPublishingContext pubContext = context.mock(IPSPublishingContext.class);
+		
 		final SiteEditionHolder siteEditionHolder = new SiteEditionHolder(){{
+		
 			setSite(site);
 			setContext(pubContext); 
 			setEdition(edition);
 		}}; 
+		
 		final IPSAssemblyTemplate template = context.mock(IPSAssemblyTemplate.class); 
 		final Sequence gseq = context.sequence("guidMgr"); 
 		
@@ -92,7 +97,7 @@ public class DemandPreviewControllerTest {
 			   one(itemTemplate).findTemplate(site, contentGUID); 
 			   will(returnValue(template));
 			   one(demandSvc).publishAndWait(edition, contentGUID, folderGUID);
-			   one(linkBuilder).buildLinkUrl(site, template, contentGUID, folderGUID, pubContext);
+			   one(linkBuilder).buildLinkUrl(site, template, contentGUID, folderGUID, pubContext,null);
 			   will(returnValue("xyz"));
 			}}); 
 			

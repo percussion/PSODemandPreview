@@ -113,7 +113,7 @@ public class DemandPreviewController extends ParameterizableViewController
        
 	    IPSAssemblyTemplate template = itemTemplateService.findTemplate(siteEditionHolder.getSite(), contentGUID);
 	    Validate.notNull(template); 
-	    log.debug("using assembly context " + siteEditionHolder.getContext()); 
+	    log.debug("using assembly context " + siteEditionHolder.getContext().getName()); 
 	    redirectTo = linkBuilderService.buildLinkUrl(siteEditionHolder.getSite(), template,
 	            contentGUID, folderGUID, siteEditionHolder.getContext()); 
 	    log.debug("redirect address: " + redirectTo);

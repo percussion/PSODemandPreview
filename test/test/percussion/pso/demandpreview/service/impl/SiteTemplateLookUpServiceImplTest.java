@@ -69,6 +69,7 @@ public class SiteTemplateLookUpServiceImplTest extends TestCase
 		sConfig.setSiteName("psoSite");
 		sConfig.setEditionName("psoEdition"); 
 		sConfig.setAssemblyContext(1); 
+		sConfig.setContextURLRootVar("http://test/");
 		siteLookUpMap.put("psoSite", sConfig);
 		lookUp.setSiteLookUpMap(siteLookUpMap);
 		

@@ -19,7 +19,7 @@
 	   <artifact name="pso-demand-preview" type="jar" />
 	</publications>
 	<dependencies>
-	  <dependency org="percussion" name="rhythmyx" rev="6.7" conf="default->default;optional->optional"  />
+	  <dependency org="percussion" name="rhythmyx" rev="7.2.0" conf="default->default;optional->optional"  />
 	  <!-- add any other dependencies here -->
 	  <dependency org="percussion" name="pso-toolkit" rev="6.6" conf="default->default;optional->optional" />
 	  <dependency org="org.springframework" name="spring" rev="2.5.5"  conf="default" /> 

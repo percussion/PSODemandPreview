@@ -20,6 +20,7 @@
 	   		        <property name="siteName" value="PreviewSite" /> <!-- the site where the publishing will occur -->
 	   		        <property name="editionName" value="PreviewEdition"/> <!--  the edition used for the publish -->
 	   		        <property name="assemblyContext" value="1" />  <!--  the assembly context for the edition  -->
+	   		        <property name="contextURLRootVar" value="rxs_urlroot" /> <!--  Optional: the context variable to use for generating the hyperlink -->
 	   		    </bean>
 	   		</entry>
 	   	</map>

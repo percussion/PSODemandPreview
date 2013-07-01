@@ -23,6 +23,7 @@ import com.percussion.services.guidmgr.IPSGuidManager;
 import com.percussion.services.guidmgr.PSGuidManagerLocator;
 import com.percussion.services.publisher.IPSEdition;
 import com.percussion.services.publisher.IPSPublisherService;
+import com.percussion.services.sitemgr.IPSPublishingContext;
 import com.percussion.services.sitemgr.IPSSite;
 import com.percussion.services.sitemgr.IPSSiteManager;
 import com.percussion.services.sitemgr.PSSiteManagerLocator;
@@ -153,8 +154,14 @@ public class SiteEditionLookUpServiceImpl implements SiteEditionLookUpService
 		 IPSEdition sEdition = getEdition(editionName);
 		 siteEditionHolder.setEdition(sEdition);
 		 
+		 IPSPublishingContext ctx = siteManager.loadContext(siteConfig.getAssemblyContext());
+     	 if(ctx==null){
+     		 emsg = "Context " + siteConfig.getAssemblyContext() +" not configured for " + siteName;
+     		 log.error(emsg);
+     		 throw new SiteLookUpException(emsg);
+     	 }
      	 
-	  siteEditionHolder.setContext(siteConfig.getAssemblyContext());  	 
+	     siteEditionHolder.setContext(ctx);  	 
 	 
 	  return siteEditionHolder;
 	 }

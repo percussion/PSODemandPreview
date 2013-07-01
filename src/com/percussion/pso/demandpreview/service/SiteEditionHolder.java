@@ -2,6 +2,7 @@ package com.percussion.pso.demandpreview.service;
 
 import com.percussion.services.assembly.IPSAssemblyTemplate;
 import com.percussion.services.publisher.IPSEdition;
+import com.percussion.services.sitemgr.IPSPublishingContext;
 import com.percussion.services.sitemgr.IPSSite;
 
 /**
@@ -15,7 +16,7 @@ import com.percussion.services.sitemgr.IPSSite;
 public class SiteEditionHolder {
 	private IPSSite site;
 	private IPSEdition edition; 
-	private int context; 
+	private IPSPublishingContext context; 
 	
 	/**
 	 * Default constructor. 
@@ -66,7 +67,7 @@ public class SiteEditionHolder {
     * Gets the assembly context. 
     * @return the context
     */
-   public int getContext()
+   public IPSPublishingContext getContext()
    {
       return context;
    }
@@ -75,7 +76,7 @@ public class SiteEditionHolder {
     * Sets the assembly context. 
     * @param context the context to set
     */
-   public void setContext(int context)
+   public void setContext(IPSPublishingContext context)
    {
       this.context = context;
    }

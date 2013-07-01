@@ -13,7 +13,8 @@ package com.percussion.pso.demandpreview.service;
 public class SiteEditionConfig {
 	
 	private String siteName;
-	private String editionName; 
+	private String editionName;
+	private String contextURLRootVar;
 	private int assemblyContext; 
 	
 	/**
@@ -79,5 +80,25 @@ public class SiteEditionConfig {
    {
       this.assemblyContext = assemblyContext;
    }
+
+/**
+ * Gets the context variable that holds the URL root for
+ * the assembly context.
+ * 
+ * @return The context variable name
+ */
+public String getContextURLRootVar() {
+	return contextURLRootVar;
+}
+
+/**
+ * Sets the context variable that holds the URL root for
+ * the assembly context.
+ * 
+ * @param contextURLRootVar The name of the context variable holding the URL root
+ */
+public void setContextURLRootVar(String contextURLRootVar) {
+	this.contextURLRootVar = contextURLRootVar;
+}
 
 }

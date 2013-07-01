@@ -86,15 +86,19 @@ public String buildLinkUrl(IPSSite site, IPSAssemblyTemplate template,
 		        url.append("/"); 
 		     }
 		     String location = item.getLocation();
-		     if(location.startsWith("/"))
-		     {
-		    	 location = location.substring(1); 
+		     if(location.startsWith("http:") || location.startsWith("https:")){
+		    	 url.replace(0, url.length(), location);
+		     }else{
+		    	 if(location.startsWith("/"))
+		    	 {
+		    		 location = location.substring(1); 
+		    	 }
+		    	 url.append(location);
 		     }
-		     url.append(location);
 		     if(StringUtils.isNotBlank(linkSuffix))
-		     {
-		        url.append(linkSuffix); 
-		     }
+	    	 {
+	    		 url.append(linkSuffix); 
+	    	 }
 		     return url.toString(); 
 
 }

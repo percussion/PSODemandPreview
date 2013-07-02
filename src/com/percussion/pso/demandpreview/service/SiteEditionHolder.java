@@ -17,6 +17,7 @@ public class SiteEditionHolder {
 	private IPSSite site;
 	private IPSEdition edition; 
 	private IPSPublishingContext context; 
+	private String contextURLRootVar;
 	
 	/**
 	 * Default constructor. 
@@ -80,6 +81,20 @@ public class SiteEditionHolder {
    {
       this.context = context;
    }
+
+/**
+ * @return the contextURLRootVar
+ */
+public String getContextURLRootVar() {
+	return contextURLRootVar;
+}
+
+/**
+ * @param contextURLRootVar the contextURLRootVar to set
+ */
+public void setContextURLRootVar(String contextURLRootVar) {
+	this.contextURLRootVar = contextURLRootVar;
+}
 	
      
 }

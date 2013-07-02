@@ -115,7 +115,7 @@ public class DemandPreviewController extends ParameterizableViewController
 	    Validate.notNull(template); 
 	    log.debug("using assembly context " + siteEditionHolder.getContext().getName()); 
 	    redirectTo = linkBuilderService.buildLinkUrl(siteEditionHolder.getSite(), template,
-	            contentGUID, folderGUID, siteEditionHolder.getContext()); 
+	            contentGUID, folderGUID, siteEditionHolder.getContext(),siteEditionHolder.getContextURLRootVar()); 
 	    log.debug("redirect address: " + redirectTo);
 		return redirectTo; 
 	}

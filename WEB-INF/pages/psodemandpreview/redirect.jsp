@@ -13,6 +13,6 @@
    <body>
       <p><img src="/Rhythmyx/sys_resources/images/banner_bkgd.jpg"></p>
       <p>please wait...</p>
-	  <p>Click here if you are not redirected: <a href="${redirectTo}">$redirectTo</a></p>
+	  <p>Click here if you are not redirected: <a href="${redirectTo}">${redirectTo}</a></p>
    </body>
 </html>

@@ -15,6 +15,7 @@ import com.percussion.services.assembly.IPSAssemblyTemplate;
 import com.percussion.services.publisher.data.PSContentListItem;
 import com.percussion.services.sitemgr.IPSPublishingContext;
 import com.percussion.services.sitemgr.IPSSite;
+import com.percussion.tablefactory.Logger;
 import com.percussion.utils.guid.IPSGuid;
 
 /**

@@ -143,6 +143,9 @@ public class SiteEditionLookUpServiceImpl implements SiteEditionLookUpService
 		    log.error(emsg); 
 			throw new SiteLookUpException(emsg);
 		 }
+		 //Store the context variable
+		 siteEditionHolder.setContextURLRootVar(siteConfig.getContextURLRootVar());
+		 
          IPSSite pSite = siteManager.loadSite(pSiteName); 
          siteEditionHolder.setSite(pSite);
 		 if(editionName == null || editionName.equals(""))

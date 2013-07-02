@@ -13,7 +13,7 @@ the `/Rhythmyx/AppServer/server/rx/deploy/rxapp.ear/rxapp.war/WEB-INF/lib` direc
 
 ## Download  
 
-*   [Nightly Snapshot ](http//cdn.percussion.com/downloads/open/psodemandpreview/pso-demand-preview-SNAPSHOT.zip)
+*  http//cdn.percussion.com/downloads/open/psodemandpreview/pso-demand-preview-SNAPSHOT.zip
 
 ## Installation  
 To deploy, you must first build the project from source, or download a packaged distribution.
@@ -42,15 +42,10 @@ you can then run Ant:
 
 > $ANT_HOME/bin/ant -f deploy.xml 
 
-## Documentation
-This version now installs the JavaDoc for the toolkit into the server's "Docs"
-directory. It can be accessed from the server at: 
-
-http://<server>:<port>/Rhythmyx/Docs/Rhythmyx/PSOToolkit/index.html 
 
 ## Building from Source
 
-> git clone https://github.com/percussion/PSOToolkit.git
+> git clone https://github.com/percussion/PSODemandPreview.git
 
 ### Configure Ivy
 The Toolkit uses [Apache Ivy](http://ant.apache.org/ivy/) for dependency management.  In addition to requiring that JAVA_HOME, ANT_HOME, and RHYTHMYX_HOME environment variables are configured, the Ivy dependencies also need configured in your Ant profile.  

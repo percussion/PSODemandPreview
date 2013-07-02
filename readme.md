@@ -13,8 +13,7 @@ the `/Rhythmyx/AppServer/server/rx/deploy/rxapp.ear/rxapp.war/WEB-INF/lib` direc
 
 ## Download  
 
-* 7.03 - 7.2  [PSOToolkit7.x.zip](http//cdn.percussion.com/downloads/open/psotoolkit/PSOToolkit7.x.zip)
-* 6.7        [PSOToolkit6.7.zip](http://cdn.percussion.com/downloads/open/psotoolkit/PSOToolkit6.7.zip)
+*   [Nightly Snapshot ](http//cdn.percussion.com/downloads/open/psodemandpreview/pso-demand-preview-SNAPSHOT.zip)
 
 ## Installation  
 To deploy, you must first build the project from source, or download a packaged distribution.

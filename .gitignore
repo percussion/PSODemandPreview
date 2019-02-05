@@ -6,3 +6,7 @@
 /build.number
 /pso-demand-preview.zip
 /pso-demand-preview-7.2.zip
+.project
+.classpath
+.springBeans
+*.iml

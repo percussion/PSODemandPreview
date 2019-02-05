@@ -1,13 +1,13 @@
-<project name="Rhythmyx 6 Install Extensions" default="dist" basedir=".">
+<project name="PSO Demand Preview Install" default="dist" basedir=".">
 	<description>
-       Install extensions on a Rhythmyx 6 server  
-	   The RHYTHMYX_HOME environment variable must be set 
     </description>
 	<property environment="env"/>
 	<!-- base directory of Rhythmyx installation -->
 	<property name="rhythmyx.home" location="${env.RHYTHMYX_HOME}"/>
 	<property name="rhythmyx.WEB-INF" value="${rhythmyx.home}/AppServer/server/rx/deploy/rxapp.ear/rxapp.war/WEB-INF"/>
 	<property name="rhythmyx.lib" value="${rhythmyx.WEB-INF}/lib"/>
+	<property name="jetty.webapp" value="${rhythmyx.home}/jetty/base/webapps/Rhythmyx" />
+
 	<!-- relative paths -->
 	<property name="lib" location="lib"/>
 	
@@ -15,9 +15,11 @@
 	<target name="jarcopy" description="copy the jar files from the lib folder" >
 		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
 		<copy todir="${rhythmyx.lib}">
-		     <fileset dir="${lib}">
-		          <include name="**.jar" /> 
-		     </fileset>
+			<fileset dir="${basedir}">
+				<include name="**.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${jetty.webapp}/WEB-INF/lib/" overwrite="true" verbose="true">
 			<fileset dir="${basedir}">
 				<include name="**.jar" />
 			</fileset>
@@ -28,6 +30,9 @@
 		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
 		<copy todir="${rhythmyx.WEB-INF}" verbose="true">
 		   <fileset dir="WEB-INF" /> 
+		</copy>
+		<copy todir="${jetty.webapp}/WEB-INF" verbose="true">
+			<fileset dir="WEB-INF" />
 		</copy>
 	</target>
 	
@@ -59,9 +64,22 @@
 			</classpath>	
 		</java>
 	</target>
+
+	<target name="uninstall">
+		<echo message="Uninstalling previous version..."/>
+		<delete casesensitive="false" failonerror="false" verbose="true">
+			<fileset>
+				<filename name="${rhythmyx.home}/AppServer/server/rx/rxapp.ear/rxapp.war/WEB-INF/lib/pso-demand-preview*.jar" />
+				<filename name="${jetty.webapp}/WEB-INF/lib/pso-demand-preview*.jar" />
+			</fileset>
+		</delete>
+
+	</target>
+
 	<target name="dist">
 		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
 		<echo>Installing Extensions to ${rhythmyx.home}</echo>
+		<antcall target="uninstall"/>
 		<antcall target="jarcopy"/>
 		<antcall target="WEB-INF" />
 		<antcall target="installExtensions"/>

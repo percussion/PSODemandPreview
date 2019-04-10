@@ -10,7 +10,7 @@
 
 	<!-- relative paths -->
 	<property name="lib" location="lib"/>
-	
+
 
 	<target name="jarcopy" description="copy the jar files from the lib folder" >
 		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
@@ -25,43 +25,45 @@
 			</fileset>
 		</copy>
     </target>
-	
+
 	<target name="WEB-INF" description="Copy any configuration files to the Web App" >
 		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
 		<copy todir="${rhythmyx.WEB-INF}" verbose="true">
-		   <fileset dir="WEB-INF" /> 
+		   <fileset dir="WEB-INF" />
 		</copy>
 		<copy todir="${jetty.webapp}/WEB-INF" verbose="true">
 			<fileset dir="WEB-INF" />
 		</copy>
 	</target>
-	
+
 	<target name="installExtensions">
 		<fail unless="env.RHYTHMYX_HOME" message="You must set the RHYTHMYX_HOME environment variable"/>
 		<java classname="com.percussion.util.PSExtensionInstallTool" fork="true">
 			<arg value="${rhythmyx.home}"/>
 			<arg value="${basedir}"/>
 			<classpath>
-			    <fileset dir="${rhythmyx.lib}">
+			    <fileset dir="${rhythmyx.home}/jetty/base/webapps/Rhythmyx/WEB-INF/lib">
 			    	<include name="rxserver.jar"/>
-			    	<include name="rxclient.jar"/> 
+			    	<include name="rxclient.jar"/>
 			    	<include name="rxutils.jar" />
 			    	<include name="rxservices.jar" />
-			    	<include name="rxbusiness.jar" /> 
-			    	<include name="commons-lang*.jar"/> 
-			    	<include name="commons-jexl*.jar"/>
-			    	<include name="jcr*.jar" /> 
-			    	<include name="commons-logging*.jar" /> 
-			    	<include name="commons-collections*.jar" /> 
-			    	<include name="commons-httpclient*.jar" /> 
+			    	<include name="rxbusiness.jar" />
 				</fileset>
-			    <fileset dir="${rhythmyx.home}/AppServer/lib/endorsed" >
-				    <include name="xml-apis.jar" />
-			    </fileset>
-				<fileset dir="${rhythmyx.home}/AppServer/server/rx/lib">
-					<include name="javax.servlet.jar" /> 
-		    	</fileset>				
-			</classpath>	
+				<fileset dir="${rhythmyx.home}/jetty/defaults/lib/perc">
+					<include name="commons-lang*.jar"/>
+					<include name="commons-jexl*.jar"/>
+					<include name="jcr*.jar" />
+					<include name="commons-collections*.jar" />
+					<include name="commons-httpclient*.jar" />
+					<include name="xml-apis.jar" />
+				</fileset>
+				<fileset dir="${rhythmyx.home}/jetty/upstream/lib">
+					<include name="servlet-api-*.jar" />
+		    	</fileset>
+				<fileset dir="${rhythmyx.home}/jetty/defaults/lib/perc-logging">
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
 		</java>
 	</target>
 

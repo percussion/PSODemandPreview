@@ -1,3 +1,5 @@
+## This project is Archived and has been merged into CMS 8.0.3 perc-toolkit
+
 ## Overview
 This is the PSODemandPreview Extension for Percussion Rhythmyx  
 
